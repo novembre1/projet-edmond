@@ -1,0 +1,40 @@
+<?php ob_start(); ?>
+<h2 class="text-center">Déposer relevé de note</h2>
+
+<form action="" method="post">
+    <div class="form-group">
+        <label for="">Eleve  </label>
+       <select name="id_eleve">
+        <option>--Choisir un élève--</option>
+           <?php foreach($eleves as $key => $eleve) :?>
+            <option value="<?= $eleve->getId() ?>"> 
+                <?= $eleve->getNom() ?> 
+            </option>         
+            <?php endforeach; ?>
+       </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Matieres : </label>
+       <select name="matieres">
+        <option>--Choisir une matiere--</option>
+          <?php foreach ($matieres as $key => $matiere) : ?>
+           <option value="<?=$matiere->getMatiere()?>">
+                <?= $matiere->getMatiere() ?>
+           </option> 
+          <?php endforeach; ?> 
+          
+       </select>
+    </div>
+
+    <div class="form-group">
+        <label for="">Note </label>
+        <input type="number" name="note" class="form-control" placeholder="Saisir note" min="0" max="20">
+    </div>
+
+    <input type="submit" class="btn btn-primary mt-2" name="inscription">
+</form>
+
+<?php $content = ob_get_clean();
+
+include 'template.phtml';

@@ -1,0 +1,32 @@
+<?php ob_start(); ?>
+<h1 class="text-center">Affichage du Releve de Note</h1>
+
+<div class="container bg-white p-5 mt-5">
+  
+    <table class="tableau-style table table-striped">
+        <thead>
+           <tr>
+
+              <th>Id_eleve</th>
+              <th>Matieres</th>
+              <th>Note</th>
+
+            </tr>
+        </thead>
+      <?php foreach($releves as $releve ): ?> 
+        <tbody>
+            <tr>           
+              <td class="text-center"><?php echo htmlspecialchars($releve->getId_eleve()); ?></td>
+              <td class="text-center"><?php echo htmlspecialchars($releve->getMatieres()); ?></td>
+              <td class="text-center"><?php echo htmlspecialchars($releve->getNote()); ?></td>
+                
+            </tr>
+        </tbody>    
+      <?php endforeach; ?>
+    </table>
+</div>
+
+
+<?php $content = ob_get_clean();
+
+include 'template.phtml';

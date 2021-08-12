@@ -1,0 +1,16 @@
+<?php ob_start(); ?>
+<h2>Deposer une matiere</h2>
+
+<form action="" method="post"> 
+    <div class="form-group">
+        <label for="">Matiere : </label>
+        <input type="text" name="matiere" class="form-control" placeholder="Matiere">
+    </div>
+
+   
+        <input type="submit" class="btn btn-primary" name="inscription">
+</form>
+
+<?php $content = ob_get_clean();
+
+include 'template.phtml';

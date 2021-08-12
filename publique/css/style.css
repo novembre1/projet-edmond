@@ -1,0 +1,29 @@
+div img{
+	width:10%;
+	height:10%;
+}
+
+.tableau-style{
+	border-collapse: collapse;
+	min-width: 400px;
+	width: auto;
+	box-shadow: 0 5px 50px rgba(O,O,O,O,15);
+	cursor: pointer;
+	margin: 100px auto;
+	border: 2px solid midnighblue;
+}
+
+thead tr {
+	background-color: midnighblue;
+	color: #fff;
+	text-align: left;
+}
+
+th, td {
+	padding: 15px 20px;
+
+}
+
+tbody tr, td, th{
+	border: 1px solid #addd;
+}
